@@ -1,1 +1,206 @@
-Hello world
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Plangular</title>
+  <meta name="author" content="Jxnblk">
+  <meta name="description" content="Angular directive for custom SoundCloud players">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" href="http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.2.1/bassdock.min.css">
+  
+    <link rel="stylesheet" href="http://d2v52k3cl9vedd.cloudfront.net/vhs/0.1.0/vhs.min.css">
+  
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+  
+    <script src="dist/plangular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  <style>
+.gameboy {
+  height: 555px;
+  width: 340px;
+  margin: 40px 0 0;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-border-bottom-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  overflow: hidden;
+  background: #f8f5de;
+  margin: 20px auto;
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+    a { word-wrap: break-word }
+    code {
+      font-size: 87.5%;
+      color: #222;
+      background-color: rgba(127, 219, 255, .25);
+    }
+    .container-narrow { max-width: 48em }
+    .bg-dark { background-color:#102630; }
+    .button-logo {
+      width: 2em;
+      height: 2em;
+      border-radius: 10000px;
+      border-width: 3px;
+    }
+    .button-logo:hover {
+      color: #102630;
+      background-color: #ff4136;
+      opacity: 0.9;
+      box-shadow: 0 0 0 2px rgba(255,65,54,.5);
+    }
+    .button-logo:before,
+    .button-logo:after {
+      border-radius: inherit;
+    }
+    .button-outline { border-width: 2px }
+    .button-transparent:focus { box-shadow: inset 0 0 0 2px }
+    .button-grow { transition: transform, box-shadow, .05s ease }
+    .button-grow:hover { transform: scale(1.0625) }
+    .button-grow:active { transform: scale(.9375) }
+    .icon { top: .03125em }
+.h6{
+  position: absolute;
+  z-index: 999;
+  top: 36px;
+  left: 200px;
+  bottom: auto;
+  right: auto;
+  z-index: 0;
+}
+.dick{
+  position: absolute;
+  z-index: 999;
+  top: 0px;
+   left: -143px;
+  bottom: auto;
+  right: auto;
+  z-index: 0;
+}
+ .list-reset{
+  margin: 22px 12px 0;
+  position: relative;
+  z-index: 5;
+}
+span , .flex-auto ng-binding{
+font-size:10px;
+}
+.tom{
+margin:20px;
+font-size:15px;
+}
+  </style>
+
+</head>
+<body class="" ng-app="app">
+  <div class="red bg-dark">
+<div class="gameboy">
+    <div class="upper-division"></div>
+    <div class="screen-section">
+        <div class="dot-matrix">
+          <div class="stereo-sound"><span>dot matrix with stereo sound</span></div>
+          <div class="battery"><span>battery</span></div>
+          <div class="screen">
+        
+<div plangular="https://soundcloud.com/inputimage/sets/my-songs" class="mb3 bg-darken-2 rounded">
+            <div id="jp_container_1"> 
+	            <div class="jp-type-playlist"> 
+		            <div id="jquery_jplayer_1" class="jp-jplayer"></div>       
+
+
+<h2 class="h4 caps flex-auto m0"><div class="tom">{{track.user.username}} - {{track.title}}</div></h2>
+
+
+		            <div class="jp-gui"> 
+			            <div class="jp-video-play"> 
+				            <a href="javascript:;" class="jp-video-play-icon" tabindex="1"></a> 
+			            </div> 
+			            <div class="jp-interface"> 
+				            <div class="jp-progress"> 
+					            <div class="jp-seek-bar">      <progress
+        class="progress"
+        ng-click="seek($event)"
+        ng-value="currentTime / duration || 0">
+        {{ currentTime / duration }}
+      </progress>
+						            <div class="jp-play-bar"></div> 
+					            </div> 
+				            </div>
+				            <div id="info"> 
+				              <ul>
+					            <li><samp class="h6">{{ currentTime | hhmmss }}</samp></div></li>
+					            <li><div class="dick"><samp class="h6">{{ duration | hhmmss }}</samp></div></li>
+					          
+				               </ul>	
+				            </div> 
+				            <div class="jp-controls-holder"> 
+					            <ul class="jp-controls"> 
+						           <li><a ng-click="previous()" class="jp-previous" tabindex="1" title="prev">previous</a><li> 
+						            <li><a ng-click="playPause()" class="jp-play" tabindex="1" title="play">play</a></li> 
+						            <li><a href="javascript:;" class="jp-pause" tabindex="1"  title="pause">pause</a></li> 
+						            <li><a ng-click="next()" class="jp-next" tabindex="1" title="next">next</a></li> 
+						            <li><a href="javascript:;" class="jp-stop" tabindex="1"  title="stop">stop</a></li> 
+						            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+					            </ul> 
+					            <div class="jp-volume-bar"> 
+						            <div class="jp-volume-bar-value"></div> 
+					            </div> 
+				            </div> 
+			            </div> 
+		            </div>  
+		           
+	            </div> 
+            </div>          
+          </div>
+        </div>
+        <div class="tm">Frontnerd Pure CSS GAMEBOY</div>
+    </div>
+    <div class="controls-section">
+        <div class="direction">
+          <div class="left-right"></div>
+          <div class="up-down"></div>
+        </div>
+        <div class="a-b">
+          <div class="b">b</div>
+          <div class="a">a</div>
+        </div>
+        <div class="select-start">
+          <div class="select">select</div>
+          <div class="start">start</div>
+        </div>
+        <div class="speaker">
+          <span class="hole"></span>
+          <span class="hole"></span>
+          <span class="hole"></span>
+          <span class="hole"></span>
+          <span class="hole"></span>
+          <span class="hole"></span>
+        </div>
+    </div>
+</div>    
+
+    </section>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.jplayer.min.js"></script> 
+  <script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
+  <script type="text/javascript" src="js/play.js"></script>   
+
+
+<script>
+  var app = angular.module('app', ['plangular'])
+    .config(function(plangularConfigProvider){
+      plangularConfigProvider.clientId = 'aeb5b3f63ac0518f8362010439a77ca1';
+    });
+</script>
+   <script src="js/index.js"></script>
+</body>
+</html>
